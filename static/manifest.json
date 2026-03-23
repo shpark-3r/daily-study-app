@@ -1,0 +1,10 @@
+{
+    "name": "Daily Study",
+    "short_name": "DailyStudy",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#0f172a",
+    "theme_color": "#0f172a",
+    "description": "매일 공부 체크리스트",
+    "icons": []
+}

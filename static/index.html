@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Daily Study</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="manifest" href="/static/manifest.json">
+    <meta name="theme-color" content="#0f172a">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📚 Daily Study</h1>
+            <div class="subtitle">매일 조금씩, 꾸준히</div>
+        </div>
+
+        <div class="date-nav">
+            <button onclick="changeDate(-1)">◀</button>
+            <div class="current-date" id="currentDate"></div>
+            <button onclick="changeDate(1)">▶</button>
+            <button class="today-btn" onclick="goToday()">오늘</button>
+        </div>
+
+        <div class="progress-section">
+            <div class="progress-bar-bg">
+                <div class="progress-bar-fill" id="progressBar" style="width: 0%"></div>
+            </div>
+            <div class="progress-text">
+                <span id="progressLabel">0 / 0 완료</span>
+                <span id="progressPct">0%</span>
+            </div>
+        </div>
+
+        <div id="tasksContainer">
+            <div class="loading">로딩 중...</div>
+        </div>
+
+        <div class="custom-section">
+            <h3>📝 나만의 할 일</h3>
+            <div class="add-task-form">
+                <input type="text" id="customInput" placeholder="할 일 추가..." onkeypress="if(event.key==='Enter')addCustomTask()">
+                <button onclick="addCustomTask()">추가</button>
+            </div>
+            <div id="customContainer"></div>
+        </div>
+
+        <div class="stats-section">
+            <h3>📊 최근 7일 현황</h3>
+            <div class="stats-grid" id="statsGrid"></div>
+        </div>
+    </div>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>
