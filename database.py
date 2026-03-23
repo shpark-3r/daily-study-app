@@ -4,6 +4,9 @@ from datetime import date
 
 DB_PATH = os.environ.get("DB_PATH", "study.db")
 
+# Ensure parent directory exists
+os.makedirs(os.path.dirname(DB_PATH) or ".", exist_ok=True)
+
 
 def get_db():
     conn = sqlite3.connect(DB_PATH)
